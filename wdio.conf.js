@@ -1,3 +1,5 @@
+const CustomReporter = require('./dist/custom_reporter').default;
+
 exports.config = {
     //
     // ====================
@@ -123,7 +125,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['dot','spec'],
+    reporters: ['dot','spec', [CustomReporter, {}]],
     
     //
     // Options to be passed to Mocha.
